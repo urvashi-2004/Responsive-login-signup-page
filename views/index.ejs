@@ -1,11 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="container">
+      <h1>Register Here</h1>
+      <div class="form-value">
+          
+      <form action="/register/registered" method="post" >
+
+        <div class="inputbox">
+            <input type="text" class="name" name="name" id="name" placeholder="Name" required>
+        </div>
+
+      <div class="inputbox">
+          <input type="text" class="username" name="username" id="username" placeholder="Username" required>
+      </div>
+
+      <div class="inputbox">
+          <input type="email" class="email" name="email" id="email" placeholder="Email Id" required>
+      </div>
+
+      <div class="inputbox">
+          <input type="password" class="pwd" id="pwd" name="pwd" placeholder="Password" required>            
+      </div>
+
+      <div class="btn">
+      <button class="login">Register</button>
+      </div>
+  
+      <div class="register">
+          <p>Already have acoount ? <a href="/login/user">Login Here</a></p>
+      </div>
+
+      <!-- <div class="signup">
+          <p>Or sign up using</p><br>
+          <div class="socialmedia">
+              <i class="media fa fa-facebook" style="background-color:navy;" ></i>
+              <i class="media fa fa-twitter" style="background-color: rgb(9, 123, 161);" ></i>
+              <i class="media fa fa-google" style="background-color:red;" ></i>               
+          </div>
+      </div> -->
+
+      <div class="row headstyle" style="margin-top :10px;">
+        <div class="col-sm-12" style="display: flex; justify-content: center; align-items: center;">
+            <% if(status==2) { %>
+                <h3 style="color:green;">product submitted successfully</h3>
+            <% }
+
+             else if(status==1){ %>
+                    <h3 style="color:red;">something went wrong, fail to submit record</h3>
+            <% } %>
+        </div>
+    </div>
+
+      </form>
+  </div>
+
+  </div>
+
   </body>
 </html>
